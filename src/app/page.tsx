@@ -1,3 +1,9 @@
+import { HeroSection } from "./components/HeroSection/hero";
+
 export default function Home() {
-  return <div className=""></div>;
+  return (
+    <main className="flex w-full max-w-[1920px] mx-auto h-screen">
+      <HeroSection />
+    </main>
+  );
 }
