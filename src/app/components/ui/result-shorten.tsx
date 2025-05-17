@@ -7,15 +7,17 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { CheckCircle, Copy, Loader, X } from "lucide-react";
+import { CheckCircle, Copy, ExternalLinkIcon, Loader, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { shortenUrl } from "@/app/actions/shorten/shorten";
+import { toast } from "sonner";
 
 interface ResultShortenProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   originalUrl: string;
+  isEncrypted: boolean;
 }
 
 export function ResultShorten({
@@ -53,19 +55,28 @@ export function ResultShorten({
   function handleCopy() {
     navigator.clipboard.writeText(shortUrl);
     setCopied(true);
+    toast.success("Link copiado com sucesso!");
+
     setTimeout(() => setCopied(false), 2000);
   }
+
+  useEffect(() => {
+    if (shortUrl) {
+      navigator.clipboard.writeText(shortUrl);
+      toast.success("Link copiado com sucesso!");
+    }
+  }, [shortUrl]);
 
   const isSuccess = !!shortUrl;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-fit text-center">
-        <DialogHeader>
-          <DialogTitle />
+      <DialogContent aria-describedby={undefined} className="w-fit text-center">
+        <DialogHeader aria-describedby={undefined}>
+          <DialogTitle aria-describedby={undefined} />
         </DialogHeader>
         {loading && (
-          <div className="flex justify-center items-center p-10">
+          <div className="flex justify-center items-center py-10 px-12">
             <Loader className="h-8 w-8 animate-spin text-blue-500" />
           </div>
         )}
@@ -86,6 +97,7 @@ export function ResultShorten({
                     href={shortUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Abrir link encurtado em nova aba"
                     className="text-blue-500 break-all max-w-xs text-sm"
                   >
                     {shortUrl}
@@ -101,10 +113,25 @@ export function ResultShorten({
                 </Badge>
               )}
               <Button
-                variant="secondary"
+                asChild
+                className="hover:text-blue-500 transition-colors delay-75 duration-300"
+                variant={"secondary"}
+                size={"icon"}
+              >
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir link encurtado em nova aba"
+                  href={shortUrl}
+                >
+                  <ExternalLinkIcon />
+                </a>
+              </Button>
+              <Button
+                variant="outline"
                 size="icon"
                 onClick={handleCopy}
-                className="hover:text-green-600"
+                className="hover:text-green-500 transition-colors delay-75 duration-300"
               >
                 <Copy className="size-5" />
               </Button>
