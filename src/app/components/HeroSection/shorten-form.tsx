@@ -5,12 +5,17 @@ import { Input } from "@/components/ui/input";
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { ResultShorten } from "../ui/result-shorten";
+import { EncryptionToggle } from "../ui/encryption-toggle";
 
 export function ShortenForm() {
   const [resultDialogOpen, setResultDialogOpen] = useState<boolean>(false);
   const [originalUrl, setOriginalUrl] = useState("");
+  const [isEncrypted, setIsEncrypted] = useState(true);
+
+  console.log(isEncrypted);
 
   function handlerSubmit(formData: FormData) {
+    formData.set("isEncrypted", String(isEncrypted));
     const url = formData.get("url") as string;
     setOriginalUrl(url);
     setResultDialogOpen(true);
@@ -38,10 +43,16 @@ export function ShortenForm() {
         </Button>
       </form>
 
+      <EncryptionToggle
+        checked={isEncrypted}
+        onCheckedChange={setIsEncrypted}
+      />
+
       <ResultShorten
         open={resultDialogOpen}
         onOpenChange={setResultDialogOpen}
         originalUrl={originalUrl}
+        isEncrypted={isEncrypted}
       />
     </>
   );
