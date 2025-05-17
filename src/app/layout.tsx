@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "./components/Header/header";
 import { Footer } from "./components/Footer/footer";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,10 +55,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
       <body className={`${inter.className} dark antialiased`}>
         <Header />
         {children}
+        <Toaster position="bottom-center" richColors closeButton />
         <Footer />
       </body>
     </html>
