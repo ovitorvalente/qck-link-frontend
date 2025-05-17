@@ -1,11 +1,14 @@
 import { Logo } from "@/components/internal/logo";
 import { SlugFading } from "@/components/internal/slug-fading";
+import { ToggleModeTheme } from "@/components/internal/toggle-mode-theme";
 import { Button } from "@/components/ui/button";
-import { Sun } from "lucide-react";
 import Link from "next/link";
 
 export function Header() {
-  const routes = ["dashboard", "about", "faq", "changelog"];
+  const routes = [
+    // "dashboard", "about", "faq",
+    "changelog",
+  ];
 
   return (
     <>
@@ -24,9 +27,7 @@ export function Header() {
                 </Button>
               ))}
             </nav>
-            <Button variant={"ghost"} size={"icon"}>
-              <Sun />
-            </Button>
+            <ToggleModeTheme />
             <Button asChild>
               <Link href={"/auth"}>Login</Link>
             </Button>
