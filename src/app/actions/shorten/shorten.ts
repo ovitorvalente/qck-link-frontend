@@ -1,5 +1,8 @@
 export async function shortenUrl(formData: FormData) {
   const url = formData.get("url") as string;
+  const isEncrypted = JSON.parse(
+    formData.get("isEncrypted")?.toString() || "false"
+  );
 
   if (!url || typeof url !== "string") {
     throw new Error("URL ausente ou inválida.");
@@ -11,7 +14,7 @@ export async function shortenUrl(formData: FormData) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ originalUrl: url }),
+      body: JSON.stringify({ originalUrl: url, isEncrypted: isEncrypted }),
     });
 
     if (!response.ok) {
