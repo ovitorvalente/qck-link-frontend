@@ -7,7 +7,8 @@ import Link from "next/link";
 export function Header() {
   const routes = [
     // "dashboard", "about", "faq",
-    "changelog",
+    { name: "home", link: "/" },
+    { name: "changelog", link: "/changelog" },
   ];
 
   return (
@@ -23,14 +24,14 @@ export function Header() {
             <nav className="flex items-center justify-end max-md:hidden gap-2 mr-8">
               {routes.map((route, index) => (
                 <Button asChild key={index} variant={"ghost"}>
-                  <Link href={`/${route}`}>{route}</Link>
+                  <Link href={`${route.link}`}>{route.name}</Link>
                 </Button>
               ))}
             </nav>
             <ToggleModeTheme />
-            <Button asChild>
+            {/* <Button asChild>
               <Link href={"/auth"}>Login</Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </header>
