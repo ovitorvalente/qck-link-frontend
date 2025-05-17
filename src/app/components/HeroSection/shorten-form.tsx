@@ -12,8 +12,6 @@ export function ShortenForm() {
   const [originalUrl, setOriginalUrl] = useState("");
   const [isEncrypted, setIsEncrypted] = useState(true);
 
-  console.log(isEncrypted);
-
   function handlerSubmit(formData: FormData) {
     formData.set("isEncrypted", String(isEncrypted));
     const url = formData.get("url") as string;
