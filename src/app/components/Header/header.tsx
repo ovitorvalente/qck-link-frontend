@@ -14,7 +14,7 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 w-full backdrop-blur-3xl border-b border-dashed bg-background/80 z-50">
-        <div className="w-full flex items-center justify-between max-w-[1920px] px-12 py-4 mx-auto">
+        <div className="w-full flex items-center justify-between max-w-[1920px] px-12 max-md:px-4 py-4 mx-auto">
           <div className="flex items-center gap-8">
             <Logo />
             <SlugFading />
