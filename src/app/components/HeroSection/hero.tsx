@@ -1,5 +1,6 @@
 import { Logo } from "@/components/internal/logo";
 import { ShortenForm } from "./shorten-form";
+import { LinkGroup } from "../ui/LinksGroup";
 
 export function HeroSection() {
   return (
@@ -17,6 +18,9 @@ export function HeroSection() {
 
           <ShortenForm />
           {/* <AlertInfo /> */}
+          <div className="flex items-center justify-center gap-2 my-8">
+            <LinkGroup />
+          </div>
         </div>
       </section>
     </>
