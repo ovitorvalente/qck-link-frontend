@@ -7,8 +7,8 @@ import Link from "next/link";
 export function Header() {
   const routes = [
     // "dashboard", "about", "faq",
-    { name: "home", link: "/" },
-    { name: "changelog", link: "/changelog" },
+    { name: "Home", link: "/", maxMdHidden: true },
+    { name: "Changelog", link: "/changelog", maxMdHidden: false },
   ];
 
   return (
@@ -21,9 +21,16 @@ export function Header() {
           </div>
 
           <div className="flex items-center justify-center gap-4">
-            <nav className="flex items-center justify-end max-md:hidden gap-2 mr-8">
+            <nav className="flex items-center justify-end gap-2 mr-8">
               {routes.map((route, index) => (
-                <Button asChild key={index} variant={"ghost"}>
+                <Button
+                  asChild
+                  key={index}
+                  variant={"ghost"}
+                  className={`${
+                    route.maxMdHidden == true ? "max-md:hidden" : ""
+                  }`}
+                >
                   <Link href={`${route.link}`}>{route.name}</Link>
                 </Button>
               ))}
