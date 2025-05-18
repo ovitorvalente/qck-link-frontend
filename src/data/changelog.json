@@ -1,0 +1,58 @@
+{
+  "versions": [
+    {
+      "id": "1.0.0-beta",
+      "version": "1.0.0 (Beta)",
+      "date": "18 de maio de 2025",
+      "description": "Primeira versão beta do QCK.Link, um encurtador de links simples, intuitivo e seguro. Esta versão foca no encurtamento de URLs com criptografia e interface minimalista para facilitar a usabilidade.",
+      "issuesUrl": "/issues",
+      "links": [
+        {
+          "title": "Repositório no GitHub",
+          "url": "https://github.com/ovitorvalente/qck-link-frontend"
+        },
+        {
+          "title": "Comparar alterações",
+          "url": ""
+        }
+      ],
+      "sections": [
+        {
+          "id": "features",
+          "title": "Funcionalidades Atuais",
+          "type": "list",
+          "items": [
+            "Encurtamento de links com código de 6 caracteres após o domínio",
+            "Criptografia da URL original salva no banco de dados",
+            "Interface simples e intuitiva com usabilidade rápida",
+            "Badge de status no rodapé indicando o estado atual da aplicação: ativo, instável ou desativado"
+          ]
+        },
+        {
+          "id": "next-steps",
+          "title": "Próximas Funcionalidades",
+          "type": "list",
+          "items": [
+            "Login e cadastro de usuários",
+            "Suporte a domínios personalizados",
+            "Configuração da quantidade de caracteres do link encurtado",
+            "Contagem de cliques nos links",
+            "Filtros por dia, mês e ano nas estatísticas",
+            "Geolocalização dos cliques",
+            "Edição de links criados",
+            "Painel de estatísticas e geração de relatórios detalhados"
+          ]
+        },
+        {
+          "id": "status",
+          "title": "Status do Aplicativo",
+          "type": "text",
+          "items": [
+            "Esta versão está em beta, e o sistema pode sofrer alterações frequentes conforme feedback dos usuários.",
+            "O badge de status na interface informa visualmente o estado atual do sistema."
+          ]
+        }
+      ]
+    }
+  ]
+}
