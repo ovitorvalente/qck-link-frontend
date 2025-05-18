@@ -24,7 +24,7 @@ export default function ChangelogView() {
             <div className="flex flex-wrap max-md:flex-col gap-2 text-sm mt-2 mb-8">
               <p className="text-gray-400">{version.date}</p>
               {version.links.map((link, index) => (
-                <div key={index} className="flex items-center justify-center">
+                <div key={index} className="flex items-center">
                   <span className="text-foreground/30 mx-2">•</span>
                   <Link
                     href={link.url}
