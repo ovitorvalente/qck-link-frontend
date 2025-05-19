@@ -63,9 +63,13 @@ export function AnalyticsCounter({ page = "shorten" }: { page?: string }) {
         className="flex items-center justify-center gap-4"
         variant={"secondary"}
       >
-        <p>Total de Visitas: {totalVisits}</p>
-        <span>|</span>
-        <p>Total de Conversões: {totalConversions}</p>
+        <p>
+          Visitas: <strong>{totalVisits}</strong>
+        </p>
+        <span>•</span>
+        <p>
+          Conversões: <strong>{totalConversions}</strong>
+        </p>
       </Badge>
     </div>
   );
