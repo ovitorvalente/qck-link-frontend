@@ -12,7 +12,7 @@ export function HeroSection() {
             <h1 className="text-4xl font-bold">Bem-vindo ao</h1>
             <Logo />
           </div>
-          <span className="text-center opacity-80">
+          <span className="text-center opacity-80 max-md:text-sm">
             Insira o link que deseja encurtar abaixo e gere uma versão compacta
             em segundos.
           </span>
