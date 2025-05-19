@@ -90,7 +90,7 @@ export function ResultShorten({
               Link encurtado com sucesso
             </p>
 
-            <div className="flex items-center gap-2 max-w-xs">
+            <div className="flex items-center gap-2 w-fit">
               {!copied && (
                 <Badge variant={"outline"} className="p-2">
                   <a
