@@ -9,13 +9,16 @@ export async function shortenUrl(formData: FormData) {
   }
 
   try {
-    const response = await fetch("http://localhost:3333/shorten", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ originalUrl: url, isEncrypted: isEncrypted }),
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/shorten`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ originalUrl: url, isEncrypted: isEncrypted }),
+      }
+    );
 
     if (!response.ok) {
       return { error: "Erro ao encurtar a URL." };
