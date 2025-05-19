@@ -5,6 +5,7 @@ import { Footer } from "./components/Footer/footer";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -69,6 +70,7 @@ export default function RootLayout({
           <Toaster position="bottom-center" richColors closeButton />
           <Footer />
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-P4SPP1BNCB" />
       </body>
     </html>
   );
