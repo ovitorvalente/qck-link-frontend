@@ -9,7 +9,7 @@ export function HeroSection() {
       <section className="flex h-fit m-auto">
         <div className="flex w-fit flex-col gap-4">
           <div className="flex items-center justify-center gap-4">
-            <h1 className="text-4xl font-bold">Bem-vindo ao</h1>
+            <h1 className="text-4xl max-md:text-2xl font-bold">Bem-vindo ao</h1>
             <Logo />
           </div>
           <span className="text-center opacity-80 max-md:text-sm">
