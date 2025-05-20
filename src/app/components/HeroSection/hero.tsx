@@ -6,8 +6,8 @@ import { AnalyticsCounter } from "../ui/analytics-counter";
 export function HeroSection() {
   return (
     <>
-      <section className="flex items-center justify-center mx-auto">
-        <div className="flex w-md flex-col gap-4">
+      <section className="flex h-fit m-auto">
+        <div className="flex w-fit flex-col gap-4">
           <div className="flex items-center justify-center gap-4">
             <h1 className="text-4xl font-bold">Bem-vindo ao</h1>
             <Logo />
