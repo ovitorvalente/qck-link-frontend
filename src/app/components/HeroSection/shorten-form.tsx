@@ -28,12 +28,12 @@ export function ShortenForm() {
           type="url"
           name="url"
           required
-          className="h-12 "
+          className="h-12 border-dashed"
           placeholder="Cole sua URL aqui"
         />
         <Button
           type="submit"
-          className="size-12 transition-all delay-75 duration-300 ease-in-out hover:rounded-2xl opacity-50 hover:opacity-100"
+          className="size-12 transition-all delay-75 duration-300 ease-in-out hover:rounded-2xl hover:opacity-60"
           variant={"default"}
           size={"icon"}
         >
