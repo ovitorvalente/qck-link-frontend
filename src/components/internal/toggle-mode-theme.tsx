@@ -29,8 +29,9 @@ export function ToggleModeTheme() {
           <TooltipTrigger asChild>
             {mounted ? (
               <Button
-                variant="ghost"
+                variant="outline"
                 size="icon"
+                className="border-dashed"
                 onClick={toggleMode}
                 aria-label="Toggle Theme"
               >
